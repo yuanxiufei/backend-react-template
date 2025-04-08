@@ -8,17 +8,17 @@ CSS Modules 不是官方规范或浏览器中的实现，而是构建步骤中�
 
 ### 开启 CSS Module
 
-在 React 中默认开启了 CSS Module，样式表文件需要以 `xxx.module.sass/less/css` 命名。
+在 React 中默认开启了 CSS Module，样式表文件需要以  `xxx.module.sass/less/css`  命名。
 
 ### 作用域
 
-默认Less或者CSS的规则是全局生效的，任何一个组件，只要有同名的className就会共用样式。
+默认 Less 或者 CSS 的规则是全局生效的，任何一个组件，只要有同名的 className 就会共用样式。
 
-CSS Module可以有效避免作用域问题，它会生成一个唯一的标识作为className
+CSS Module 可以有效避免作用域问题，它会生成一个唯一的标识作为 className
 
 ### 全局作用域(:global)
 
-如果我们想要修改第三方组件样式，默认情况通过css-module无法修改，需要添加:global才可以。
+如果我们想要修改第三方组件样式，默认情况通过 css-module 无法修改，需要添加:global 才可以。
 
 ```less
 .login {

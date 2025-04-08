@@ -25,17 +25,17 @@ pnpm add react-router-dom
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 // 使用组件包裹
-<BrowserRouter>
-    <App />
+;<BrowserRouter>
+  <App />
 </BrowserRouter>
 ```
 
-###### Routes定义路由
+###### Routes 定义路由
 
 ```jsx
 <Routes>
-   <Route path='/' element={<App />}></Route>
-   <Route path='/demo' element={<React />}></Route>
+  <Route path='/' element={<App />}></Route>
+  <Route path='/demo' element={<React />}></Route>
 </Routes>
 ```
 

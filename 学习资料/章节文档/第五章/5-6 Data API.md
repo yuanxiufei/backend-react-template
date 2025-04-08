@@ -7,7 +7,7 @@
 - [`createHashRouter`](https://reactrouter.com/en/main/routers/create-hash-router)
 - [`createStaticRouter`](https://reactrouter.com/en/main/routers/create-static-router)
 
-只有上面四个API创建的路由才有Data API功能
+只有上面四个 API 创建的路由才有 Data API 功能
 
 ###### Loader、useLoaderData
 
@@ -43,5 +43,3 @@ function orderLoader({ params }: any) {
 ###### Action、useActionData
 
 https://reactrouter.com/en/main/hooks/use-action-data
-
-

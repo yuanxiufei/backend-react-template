@@ -8,13 +8,13 @@ export default defineConfig({
     port: 8080,
     proxy: {
       // '/api': 'http://api-driver.marsview.cc'
-			'/api': 'http://driver.marsview.cc'
+      '/api': 'http://driver.marsview.cc'
     }
   },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-			'@amis-themes': path.resolve(__dirname, 'node_modules/amis/lib/themes')
+      '@amis-themes': path.resolve(__dirname, 'node_modules/amis/lib/themes')
     }
   },
   plugins: [react()]

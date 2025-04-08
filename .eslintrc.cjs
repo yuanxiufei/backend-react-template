@@ -1,10 +1,16 @@
 module.exports = {
+  ignorePatterns: ['dist/**', '学习资料/**', 'node_modules/**', 'public/**', '.husky/**'],
   env: {
     browser: true,
     es2021: true,
     node: true
   },
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react-hooks/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+    'plugin:react-hooks/recommended'
+  ],
   overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -24,6 +30,11 @@ module.exports = {
     'no-debugger': 'error', // 禁止使用debugger
     'no-var': 'error', // 要求使用 let 或 const 而不是 var
     '@typescript-eslint/no-namespace': 'off',
-    '@typescript-eslint/no-unused-vars': 'off'
+    '@typescript-eslint/no-unused-vars': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    'react/prop-types': 'off',
+    'no-empty': 'off', // 允许空的代码块
+    'react-hooks/exhaustive-deps': 'off' // 关闭React Hook依赖检查警告
   }
 }

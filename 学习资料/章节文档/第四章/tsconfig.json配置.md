@@ -1,8 +1,6 @@
-## tsconfig.json配置
+## tsconfig.json 配置
 
 TypeScript 使用 tsconfig.json 文件作为其配置文件，当一个目录中存在 tsconfig.json 文件，则认为该目录为 TypeScript 项目的根目录。
-
-
 
 ###### 基础字段
 
@@ -14,14 +12,12 @@ TypeScript 使用 tsconfig.json 文件作为其配置文件，当一个目录中
 
 - compilerOptions - 编译配置选项；
 
-
-
 ###### 编译配置
 
 ```js
 {
   "compilerOptions": {
-  
+
     /* 基本选项 */
     "target": "es5",                       // 指定 ECMAScript 目标版本: 'ES3' (default), 'ES5', 'ES6'/'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'
     "module": "commonjs",                  // 指定使用模块: 'commonjs', 'amd', 'system', 'umd' or 'es2015'
@@ -38,7 +34,7 @@ TypeScript 使用 tsconfig.json 文件作为其配置文件，当一个目录中
     "noEmit": true,                        // 不生成输出文件
     "importHelpers": true,                 // 从 tslib 导入辅助工具函数
     "isolatedModules": true,               // 将每个文件做为单独的模块 （与 'ts.transpileModule' 类似）.
-    // 只编译修改过的文件,这个时候会生成tsconfig.tsbuildinfo,下次编译的时候会进行对比只编译修改过的文件 
+    // 只编译修改过的文件,这个时候会生成tsconfig.tsbuildinfo,下次编译的时候会进行对比只编译修改过的文件
     "incremental": true,
 
     /* 严格的类型检查选项 */

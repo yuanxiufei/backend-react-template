@@ -7,7 +7,13 @@
     "dev": "vite",
     "build:stg": "tsc && vite build --mode stag",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx,.cjs",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx,.cjs --fix",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
+    "prepare": "husky",
+    "commitlint": "commitlint --edit"
   },
   "dependencies": {
     "@ant-design/icons": "^5.1.4",
@@ -21,13 +27,15 @@
     "froala-editor": "^4.5.1",
     "less": "^4.1.3",
     "mobx-react": "^6.3.1",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-json-view": "^1.21.3",
     "react-router-dom": "^6.11.0",
     "zustand": "^4.3.8"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
     "@types/node": "^18.15.0",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
@@ -35,14 +43,18 @@
     "@typescript-eslint/parser": "^5.54.1",
     "@vitejs/plugin-react": "^3.1.0",
     "eslint": "^8.36.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^2.8.4",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "husky": "^9.1.7",
+    "prettier": "^2.8.8",
     "typescript": "^4.9.3",
     "vite": "^4.1.0"
   },
   "overrides": {
-		"react": "^18.2.0",
+    "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "amis": "6.12.0",
     "backend-react-template": "0.0.0"

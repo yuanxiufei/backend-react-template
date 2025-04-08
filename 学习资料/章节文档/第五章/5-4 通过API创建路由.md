@@ -1,4 +1,4 @@
-## API创建路由（推荐方式）
+## API 创建路由（推荐方式）
 
 ###### useRoutes
 
@@ -37,34 +37,32 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 ###### createBrowserRouter
 
 ```js
-import { createBrowserRouter, RouterProvider} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 // 创建路由
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <App />,
+    path: '/',
+    element: <App />
   },
   {
-    path: "/vite",
-    element: <Vite />,
+    path: '/vite',
+    element: <Vite />
   },
   {
-    path: "/react",
+    path: '/react',
     element: <ReactDemo />
   },
   {
-    path: "*",
+    path: '*',
     element: <NotFound />
-  },
-]);
+  }
+])
 
 // 传递给RouterProvider
-<RouterProvider router={router} />
+;<RouterProvider router={router} />
 ```
 
 ###### createHashRouter
 
 用法同上。
-
-

@@ -26,9 +26,9 @@ export default function OrderMarker(props: IDetailProp) {
   const renderMap = (detail: Order.OrderItem) => {
     const map = new window.BMapGL.Map('markerMap')
     map.centerAndZoom(detail.cityName, 12)
-    var scaleCtrl = new window.BMapGL.ScaleControl() // 添加比例尺控件
+    const scaleCtrl = new window.BMapGL.ScaleControl() // 添加比例尺控件
     map.addControl(scaleCtrl)
-    var zoomCtrl = new window.BMapGL.ZoomControl() // 添加缩放控件
+    const zoomCtrl = new window.BMapGL.ZoomControl() // 添加缩放控件
     map.enableScrollWheelZoom()
     map.addControl(zoomCtrl)
     detail.route?.map(item => {

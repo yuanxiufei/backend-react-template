@@ -33,8 +33,8 @@ export default function OrderRoute(props: IDetailProp) {
     map.centerAndZoom(detail.cityName, 17)
 
     const path = detail.route || []
-    var point = []
-    for (var i = 0; i < path.length; i++) {
+    const point = []
+    for (let i = 0; i < path.length; i++) {
       point.push(new window.BMapGL.Point(path[i].lng, path[i].lat))
     }
 

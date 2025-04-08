@@ -15,38 +15,38 @@ const memoizedValue = useMemo(() => computeExpensiveValue(a, b), deps);
 
 #### useMemo 优化
 
-我们定义了一个`total`函数，内部使用 1 填充了100次，通过 `reduce` 计算总和，经过测试发现点击 `Increase`按钮后，只会执行 `total1` ，不会执行 `total2`，假设`total`计算量巨大，就会造成内存的浪费，通过 `useMemo` 可以帮我们缓存计算值。
+我们定义了一个`total`函数，内部使用 1 填充了 100 次，通过 `reduce` 计算总和，经过测试发现点击 `Increase`按钮后，只会执行 `total1` ，不会执行 `total2`，假设`total`计算量巨大，就会造成内存的浪费，通过 `useMemo` 可以帮我们缓存计算值。
 
 ```JavaScript
-function App(){    
-    console.log('Demo1 Parent')    
-    let [count,setCount] = useState(0)    
-    const handleClick = ()=>{        
-        setCount(count+1)    
-    }    
-    const total1 = ()=>{        
-        console.log('计算求和1')        
-        let arr = Array.from({ length:100 }).fill(1)        
-        return arr.reduce((prev,next)=>prev+next,0)    
-    }    
-    // 缓存对象值    
-    const total2 = useMemo(()=>{        
-        console.log('计算求和2')        
-        let arr = Array.from({ length:100 }).fill(1)        
-        return arr.reduce((prev,next)=>prev+next,0)    
-    },[count]) 
-    return (        
-        <div>            
-            <div>                
-                <label>Count：{count}</label>             
-                <button onClick={handleClick}>Increase</button>            
-            </div>            
-            <div>                
-                <label>总和：</label>                
-                <span>{total1()}</span>                
-                <span>{total2}</span>            
-            </div>        
-        </div>    
+function App(){
+    console.log('Demo1 Parent')
+    let [count,setCount] = useState(0)
+    const handleClick = ()=>{
+        setCount(count+1)
+    }
+    const total1 = ()=>{
+        console.log('计算求和1')
+        let arr = Array.from({ length:100 }).fill(1)
+        return arr.reduce((prev,next)=>prev+next,0)
+    }
+    // 缓存对象值
+    const total2 = useMemo(()=>{
+        console.log('计算求和2')
+        let arr = Array.from({ length:100 }).fill(1)
+        return arr.reduce((prev,next)=>prev+next,0)
+    },[count])
+    return (
+        <div>
+            <div>
+                <label>Count：{count}</label>
+                <button onClick={handleClick}>Increase</button>
+            </div>
+            <div>
+                <label>总和：</label>
+                <span>{total1()}</span>
+                <span>{total2}</span>
+            </div>
+        </div>
     )
 }
 ```

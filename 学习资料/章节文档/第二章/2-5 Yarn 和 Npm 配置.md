@@ -1,33 +1,33 @@
-## yarn 和 npm配置
+## yarn 和 npm 配置
 
 #### 环境安装和配置
 
-1. 下载最新稳定版 Node.js 
+1. 下载最新稳定版 Node.js
 
-2. 安装cnpm、yarn或者pnpm
+2. 安装 cnpm、yarn 或者 pnpm
 
 ```shell
 # 安装yarn
-npm install -g yarn 
+npm install -g yarn
 # 安装pnpm
 npm install -g pnpm
 ```
 
 > npm 安装文档：https://pnpm.io/installation
 
-#### npm修改配置
+#### npm 修改配置
 
-在项目根目录（package.json同一目录）中新建 `.npmrc`文件，编辑文件内容如下：
+在项目根目录（package.json 同一目录）中新建  `.npmrc`文件，编辑文件内容如下：
 
 ```ini
-registry=https://registry.npm.taobao.org 
+registry=https://registry.npm.taobao.org
 ```
 
 保存后再使用`npm install`下载包的速度会快很多
 
-#### yarn修改配置
+#### yarn 修改配置
 
-在项目根目录（package.json同一目录）中新建 `.yarnrc`文件，编辑文件内容如下：
+在项目根目录（package.json 同一目录）中新建  `.yarnrc`文件，编辑文件内容如下：
 
 ```bash
 registry "https://registry.npm.taobao.org"
@@ -41,31 +41,31 @@ npm config set registry https://registry.npm.taobao.org
 yarn config set registry https://registry.npm.taobao.org
 ```
 
-#### pnpm介绍
+#### pnpm 介绍
 
-**一、什么是pnpm**
+**一、什么是 pnpm**
 
 快速的，节省磁盘空间的包管理工具。
 
-**二、pnpm的特点**
+**二、pnpm 的特点**
 
 1、快速
 
-pnpm比其他包管理器快2倍。
+pnpm 比其他包管理器快 2 倍。
 
 2、高效
 
 node_modules 中的文件为复制或链接自特定的内容寻址存储库。
 
-3、支持monorepos
+3、支持 monorepos
 
-pnpm内置支持单仓多包。
+pnpm 内置支持单仓多包。
 
 4、严格
 
 pnpm 默认创建了一个非平铺的 node_modules，因此代码无法访问任意包。
 
-**pnpm使用命令**
+**pnpm 使用命令**
 
 ```js
 pnpm install 包名  //

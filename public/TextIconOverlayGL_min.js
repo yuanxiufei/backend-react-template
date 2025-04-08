@@ -72,10 +72,7 @@ var BMapLib = (window.BMapLib = BMapLib || {})
       var j = c.dom
       h = j.g(h)
       g = c.string.toCamelCase(g)
-      var i =
-        h.style[g] ||
-        (h.currentStyle ? h.currentStyle[g] : '') ||
-        j.getComputedStyle(h, g)
+      var i = h.style[g] || (h.currentStyle ? h.currentStyle[g] : '') || j.getComputedStyle(h, g)
       if (!i) {
         var f = j._styleFixer[g]
         if (f) {
@@ -92,9 +89,7 @@ var BMapLib = (window.BMapLib = BMapLib || {})
       c.browser.opera = +RegExp['\x241']
     }
     c.browser.isWebkit = /webkit/i.test(navigator.userAgent)
-    c.browser.isGecko =
-      /gecko/i.test(navigator.userAgent) &&
-      !/like gecko/i.test(navigator.userAgent)
+    c.browser.isGecko = /gecko/i.test(navigator.userAgent) && !/like gecko/i.test(navigator.userAgent)
     c.browser.isStrict = document.compatMode == 'CSS1Compat'
     c.dom.getPosition = function (f) {
       f = c.dom.g(f)
@@ -115,12 +110,8 @@ var BMapLib = (window.BMapLib = BMapLib || {})
       }
       if (f.getBoundingClientRect) {
         g = f.getBoundingClientRect()
-        m.left =
-          Math.floor(g.left) +
-          Math.max(o.documentElement.scrollLeft, o.body.scrollLeft)
-        m.top =
-          Math.floor(g.top) +
-          Math.max(o.documentElement.scrollTop, o.body.scrollTop)
+        m.left = Math.floor(g.left) + Math.max(o.documentElement.scrollLeft, o.body.scrollLeft)
+        m.top = Math.floor(g.top) + Math.max(o.documentElement.scrollTop, o.body.scrollTop)
         m.left -= o.documentElement.clientLeft
         m.top -= o.documentElement.clientTop
         var n = o.body,
@@ -242,10 +233,7 @@ var BMapLib = (window.BMapLib = BMapLib || {})
     }
     c.lang.Class.prototype.removeEventListener = function (i, h) {
       if (typeof h != 'undefined') {
-        if (
-          (c.lang.isFunction(h) && !(h = h.hashCode)) ||
-          !c.lang.isString(h)
-        ) {
+        if ((c.lang.isFunction(h) && !(h = h.hashCode)) || !c.lang.isString(h)) {
           return
         }
       }
@@ -391,11 +379,7 @@ var BMapLib = (window.BMapLib = BMapLib || {})
     var f = g.textSize || 10
     var m = []
     if (d.browser.ie < 7) {
-      m.push(
-        'filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="' +
-          h +
-          '");'
-      )
+      m.push('filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="' + h + '");')
     } else {
       m.push('background-image:url(' + h + ');')
       var i = '0 0'
@@ -405,22 +389,10 @@ var BMapLib = (window.BMapLib = BMapLib || {})
     if (n instanceof window.BMapGL.Size) {
       if (k instanceof window.BMapGL.Size) {
         if (k.height > 0 && k.height < n.height) {
-          m.push(
-            'height:' +
-              (n.height - k.height) +
-              'px; padding-top:' +
-              k.height +
-              'px;'
-          )
+          m.push('height:' + (n.height - k.height) + 'px; padding-top:' + k.height + 'px;')
         }
         if (k.width > 0 && k.width < n.width) {
-          m.push(
-            'width:' +
-              (n.width - k.width) +
-              'px; padding-left:' +
-              k.width +
-              'px;'
-          )
+          m.push('width:' + (n.width - k.width) + 'px; padding-left:' + k.width + 'px;')
         }
       } else {
         m.push('height:' + n.height + 'px; line-height:' + n.height + 'px;')

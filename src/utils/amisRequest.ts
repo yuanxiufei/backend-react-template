@@ -9,14 +9,7 @@ interface AmisRequestConfig {
   headers?: Record<string, string>
 }
 
-const amisRequest = async ({
-  url,
-  method = 'get',
-  data,
-  responseType,
-  config = {},
-  headers
-}: AmisRequestConfig) => {
+const amisRequest = async ({ url, method = 'get', data, responseType, config = {}, headers }: AmisRequestConfig) => {
   config = {
     ...config,
     headers,

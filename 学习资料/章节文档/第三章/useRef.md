@@ -7,7 +7,7 @@ import { useRef, useState } from 'react'
 import './App.css'
 
 function App() {
-  const userRef = useRef<HTMLInputElement>(null)
+  const userRef = useRef < HTMLInputElement > null
   const [val, setVal] = useState('')
   const handleClick = () => {
     userRef.current?.focus()
@@ -23,7 +23,4 @@ function App() {
 }
 
 export default App
-
 ```
-
-

@@ -17,10 +17,7 @@ var BMapLib = (window.BMapLib = BMapLib || {})
     var h = f(i.getSouthWest().lng, -180, 180)
     var j = f(i.getNorthEast().lat, -74, 74)
     var l = f(i.getSouthWest().lat, -74, 74)
-    return new window.BMapGL.Bounds(
-      new window.BMapGL.Point(h, l),
-      new window.BMapGL.Point(k, j)
-    )
+    return new window.BMapGL.Bounds(new window.BMapGL.Point(h, l), new window.BMapGL.Point(k, j))
   }
   var f = function (j, k, h) {
     k && (j = Math.max(j, k))
@@ -229,11 +226,9 @@ var BMapLib = (window.BMapLib = BMapLib || {})
     this._markers = []
     this._gridBounds = null
     this._isReal = false
-    this._clusterMarker = new BMapLib.TextIconOverlay(
-      this._center,
-      this._markers.length,
-      { styles: this._markerClusterer.getStyles() }
-    )
+    this._clusterMarker = new BMapLib.TextIconOverlay(this._center, this._markers.length, {
+      styles: this._markerClusterer.getStyles()
+    })
   }
   g.prototype.addMarker = function (k) {
     if (this.isMarkerInCluster(k)) {

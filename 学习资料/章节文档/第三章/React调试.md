@@ -14,22 +14,22 @@
 
 - console.count()
 
-**debugger调试**
+**debugger 调试**
 
-**chrome断点调试**
+**chrome 断点调试**
 
-**chrome条件断点**
+**chrome 条件断点**
 
-**HTML节点复制**
+**HTML 节点复制**
 
 - 选中节点，使用 `$0`复制
 
-**JavaScript对象复制**
+**JavaScript 对象复制**
 
-- copy函数
+- copy 函数
 
 **接口调试**
 
 #### 掘进文章
 
-[2022了还不会调试吗？ - 掘金](https://juejin.cn/post/7124104703884918798)
+[2022 了还不会调试吗？ - 掘金](https://juejin.cn/post/7124104703884918798)
