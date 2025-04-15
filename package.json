@@ -7,7 +7,7 @@
     "registry": "https://registry.npmmirror.com"
   },
   "scripts": {
-    "dev": "vite --host",
+    "dev": "vite",
     "build:stg": "tsc && vite build --mode stag",
     "build": "tsc && vite build",
     "preview": "vite preview",
