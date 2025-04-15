@@ -20,8 +20,10 @@ export interface PageParams {
 }
 export namespace Login {
   export interface params {
-    userName: string
-    userPwd: string
+    code: string
+    random: string
+    username: string
+    password: string
   }
 }
 // 用户管理
@@ -94,9 +96,8 @@ export namespace Dept {
 }
 
 export namespace Menu {
-  export interface Params {
-    menuName: string
-    menuState: number
+  export interface systemIdParams {
+    systemId: number
   }
   // 菜单创建
   export interface CreateParams {
@@ -263,4 +264,9 @@ export namespace Order {
     orderCompleteCount: number // 昨日完单数
     createTime: string // 创建时间
   }
+}
+
+export interface checkType {
+  code: string
+  random: string
 }

@@ -67,11 +67,7 @@
 
 ```bash
 # 安装依赖
-npm install
-# 或者
-yarn
-# 或者
-pnpm install
+pnpm install （amis有些依赖需要pnpm支持需要用pnpm方式安装依赖）
 
 # 启动开发服务器
 npm run dev

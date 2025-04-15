@@ -4,17 +4,31 @@ import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
-    host: 'localhost',
-    port: 8080,
+    host: 'hsa.guahao-test.com',
+    // host: 'localhost',
+    port: 8001,
+    open: true,
+    cors: true,
     proxy: {
-      // '/api': 'http://api-driver.marsview.cc'
-      '/api': 'http://driver.marsview.cc'
+      '/api': {
+        target: 'https://apitcme.guahao-test.com/bqex',
+        changeOrigin: true,
+        secure: false,
+        rewrite: path => path.replace(/^\/api/, ''),
+        configure: (proxy, options) => {
+          proxy.on('proxyReq', (proxyReq, req, res) => {
+            console.log('Request:', req.method, req.url)
+          })
+          proxy.on('proxyRes', (proxyRes, req, res) => {
+            console.log('Response:', proxyRes.statusCode, req.url)
+          })
+        }
+      }
     }
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-      '@amis-themes': path.resolve(__dirname, 'node_modules/amis/lib/themes')
+      '@': path.resolve(__dirname, './src')
     }
   },
   plugins: [react()]

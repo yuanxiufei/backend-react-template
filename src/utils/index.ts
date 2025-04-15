@@ -3,6 +3,7 @@
  */
 
 import { Menu } from '@/types/api'
+import CryptoJS from 'crypto-js'
 
 // 格式化金额
 export const formatMoney = (num?: number | string) => {
@@ -107,4 +108,22 @@ export const findTreeNode = (tree: Menu.MenuItem[], pathName: string, path: stri
     path.pop()
   }
   return []
+}
+
+/*
+ * param {String} word 待加密的字符串
+ * param {String} keyStr aes加密需要用到的16位字符串的key
+ */
+export const encrypt2 = (key: string, data2: string) => {
+  let result = ''
+  key = CryptoJS.enc.Latin1.parse(key)
+  const iv = key
+  // 加密
+  const encrypted = CryptoJS.AES.encrypt(data2, key, {
+    iv,
+    mode: CryptoJS.mode.CBC,
+    padding: CryptoJS.pad.ZeroPadding
+  })
+  result = encrypted.toString()
+  return result
 }

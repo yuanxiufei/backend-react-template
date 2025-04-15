@@ -28,7 +28,7 @@ export const router = [
       },
       {
         path: '/dashboard',
-        element: lazyLoad(React.lazy(() => import('@/views/amis')))
+        element: lazyLoad(React.lazy(() => import('@/views/amis/index')))
         // element: lazyLoad(React.lazy(() => import('@/views/dashboard')))
       },
       {
@@ -59,10 +59,6 @@ export const router = [
         path: '/driverList',
         element: lazyLoad(React.lazy(() => import('@/views/order/DriverList')))
       }
-      // {
-      //   path: '/amis',
-      //   element: lazyLoad(React.lazy(() => import('@/views/amis')))
-      // }
     ]
   },
   {

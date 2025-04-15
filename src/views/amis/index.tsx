@@ -1,6 +1,6 @@
 import React from 'react'
-import { render as renderAmis, setDefaultTheme } from 'amis'
-import amisRequest from '@/utils/amisRequest'
+import { render as renderAmis } from 'amis'
+import amisRequest from '../../utils/amisRequest'
 
 const AmisDemo = () => {
   const schema = {
