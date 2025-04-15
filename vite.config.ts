@@ -4,17 +4,19 @@ import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
-    host: 'hsa.guahao-test.com',
-    // host: 'localhost',
+    // host: 'hsa.guahao-test.com',
+    host: 'localhost',
     port: 8001,
     open: true,
     cors: true,
     proxy: {
       '/api': {
-        target: 'https://apitcme.guahao-test.com/bqex',
+        // target: 'https://apitcme.guahao-test.com/bqex',
+        // target: 'http://api-driver.marsview.cc',
+        target: 'http://driver.marsview.cc',
         changeOrigin: true,
         secure: false,
-        rewrite: path => path.replace(/^\/api/, ''),
+        // rewrite: path => path.replace(/^\/api/, ''),
         configure: (proxy, options) => {
           proxy.on('proxyReq', (proxyReq, req, res) => {
             console.log('Request:', req.method, req.url)

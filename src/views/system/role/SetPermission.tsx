@@ -2,7 +2,7 @@ import { Menu, Role } from '@/types/api'
 import { IAction, IModalProp } from '@/types/modal'
 import { Modal, Form, Tree } from 'antd'
 import { useEffect, useImperativeHandle, useState } from 'react'
-import api from '@/api/index'
+import api from '@/api'
 import roleAPi from '@/api/roleApi'
 import { message } from '@/utils/AntdGlobal'
 export default function SetPermission(props: IModalProp<Role.RoleItem>) {

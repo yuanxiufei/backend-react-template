@@ -1,9 +1,21 @@
 import request from '@/utils/request'
-import { Dashboard, Dept, Login, Menu, ResultData, User } from '@/types/api'
+import { Dashboard, Dept, Login, Menu, ResultData, User, checkType } from '@/types/api'
 export default {
   // 登录
   login(params: Login.params) {
-    return request.post<string>('/users/login', params, { showLoading: false })
+    return request.post<string>('/base/auth/login/username', params, { showLoading: false })
+  },
+  // 获取验证码
+  imgCode() {
+    return request.get<string>('/base/captcha/image', {}, { showLoading: false })
+  },
+  // 校验验证码
+  check(params: checkType) {
+    return request.post<checkType>('/base/captcha/check', params, { showLoading: false })
+  },
+  // 获取key
+  getKey() {
+    return request.get<string>('/upms/crypto/key', {}, { showLoading: false })
   },
   // 获取用户信息
   getUserInfo() {
@@ -70,9 +82,9 @@ export default {
   deleteDept(params: Dept.DelParams) {
     return request.post('/dept/delete', params)
   },
-  // 菜单管理
-  getMenuList(params?: Menu.Params) {
-    return request.get<Menu.MenuItem[]>('/menu/list', params)
+  // 获取当前用户的菜单
+  getMenuList(params?: Menu.systemIdParams) {
+    return request.get<Menu.MenuItem[]>('/upms/menu/list/my/tree', params)
   },
   // 创建菜单
   createMenu(params: Menu.CreateParams) {

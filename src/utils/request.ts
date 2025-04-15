@@ -7,11 +7,11 @@ import { message } from './AntdGlobal'
 console.log('config', env)
 // 创建实例
 const instance = axios.create({
-  timeout: 30000,
+  timeout: 8000,
   timeoutErrorMessage: '请求超时，请稍后再试',
   withCredentials: true,
   headers: {
-    // icode: 'B815F86524423DB0'
+    icode: ''
   }
 })
 
@@ -55,7 +55,7 @@ instance.interceptors.response.use(
         return Promise.reject(data)
       }
     }
-    return response.data
+    return data.data
   },
   error => {
     hideLoading()
